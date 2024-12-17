@@ -1,0 +1,8 @@
+{
+  "expo": {
+    "scheme": "acme",
+    "plugins": ["expo-router"],
+    "name": "job-react-native",
+    "slug": "job-react-native"
+  }
+}
