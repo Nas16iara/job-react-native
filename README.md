@@ -59,18 +59,31 @@ The project is organized as follows:
 /job-react-native
 │
 ├── /assets # Static assets like images, fonts, etc.
+
 ├── /src # Main source code for the app
+
 │ ├── /components # Reusable UI components
+
 │ ├── /screens # Screens (e.g., Job search, Job details)
+
 │ ├── /services # API calls and other business logic
+
 │ └── /navigation # Navigation setup (using Expo Router)
+
 ├── /node_modules # Installed npm dependencies
+
 ├── /android # Android-specific build files
+
 ├── /ios # iOS-specific build files
+
 ├── app.json # Expo app configuration
+
 ├── eas.json # EAS build configuration (for cloud builds)
+
 ├── package.json # Project configuration and dependencies
+
 └── README.md # This file
+
 ⚙️ EAS Build Configuration
 
 For building and submitting the app using EAS (Expo Application Services), configure your eas.json file for the project.
