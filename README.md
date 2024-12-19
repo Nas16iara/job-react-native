@@ -50,67 +50,8 @@ The app integrates with the Search API from RapidAPI to fetch job listings. To u
 Sign up for an account at RapidAPI.
 Find the Search API (or any job search API) and get your API key.
 2️⃣ API Integration
-Once you have the API key, you can integrate it into your app. Below is an example of how to set up the API request in your app.
+Once you have the API key, you can integrate it into your app. 
 
-Example API Call (using Axios):
-
-import axios from 'axios';
-
-const searchJobs = async (query) => {
-const url = 'https://api.rapidapi.com/job-search'; // Replace with your actual API URL
-const options = {
-method: 'GET',
-url: url,
-params: { query },
-headers: {
-'X-RapidAPI-Key': 'your-rapidapi-key', // Replace with your RapidAPI key
-'X-RapidAPI-Host': 'your-api-host', // Replace with the API host
-},
-};
-
-try {
-const response = await axios.request(options);
-return response.data;
-} catch (error) {
-console.error('Error fetching data: ', error);
-return [];
-}
-};
-3️⃣ Example UI for Searching Jobs
-Here’s a simple UI example for searching jobs:
-
-import React, { useState } from 'react';
-import { TextInput, Button, FlatList, Text, View } from 'react-native';
-
-const JobSearchScreen = () => {
-const [query, setQuery] = useState('');
-const [results, setResults] = useState([]);
-
-const handleSearch = async () => {
-const data = await searchJobs(query);
-setResults(data);
-};
-
-return (
-<View>
-<TextInput
-        value={query}
-        onChangeText={setQuery}
-        placeholder="Search for jobs"
-      />
-<Button title="Search" onPress={handleSearch} />
-<FlatList
-data={results}
-keyExtractor={(item) => item.id.toString()}
-renderItem={({ item }) => (
-<Text>{item.title} - {item.company}</Text>
-)}
-/>
-</View>
-);
-};
-
-export default JobSearchScreen;
 🗂️ Project Structure
 
 The project is organized as follows:
@@ -134,19 +75,6 @@ The project is organized as follows:
 
 For building and submitting the app using EAS (Expo Application Services), configure your eas.json file for the project.
 
-Example eas.json
-{
-"build": {
-"production": {
-"ios": {
-"bundleIdentifier": "com.yourcompany.jobreactnative"
-},
-"android": {
-"package": "com.yourcompany.jobreactnative"
-}
-}
-}
-}
 You can modify the bundleIdentifier and package values to match your app’s details.
 
 🐛 Troubleshooting
